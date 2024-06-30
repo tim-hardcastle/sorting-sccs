@@ -25,7 +25,7 @@ sort (p node) -> list[set[node]]
 	return the result list
 ```
 
-We will prove that it works by induction.
+I will prove that it works by induction.
 
 Clearly when p is the only element reachable from p, then the algorithm will return {p} as required.
 
