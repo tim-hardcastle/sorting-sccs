@@ -31,7 +31,7 @@ So let the set R(p) of unvisited nodes reachable from p have size n > 1, and sup
 
 Then for any q in q₀ … qₙ, we do have R(q) < R(P), because since q is reachable from p, R(P) must contain R(q), but it must also contain p, which R(q) cannot because it's created after p has been marked as visited.
 
-So sort does work on each of the qᵢ.
+So by the inductive hypothesis sort does work on each of the qᵢ.
 
 Now consider the two cases in the final loop of our algorithm. If Q has no back edges to p, then bringing p back into consideration changes nothing: Q is still connected, and the addition of p doesn't stop it from being maximal with respect to that property, because of the absence of a back edge from Q to p.
 
