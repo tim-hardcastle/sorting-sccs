@@ -39,7 +39,7 @@ Now consider the two cases in the final loop of our algorithm. If Q has no back 
 
 So then consider the final thing we return, the union of {p} with all the Q in ΣQᵢ that do have back edges to it. It is clearly connected, because by construction from any x and y in this set we have a route from x to p, and a route from p to y. So we have a route from x to y.
 
-Is it maximal? Well, if it wasn't, then there must be some z with a route from p to z and a route from z to p such that z is not in our final value of P. Hence it can't be p itself, and it can't be in any of the Q in ΣQᵢ that have back edges to p, because that's just what we united with {p} to get our final value of P. And it can't be in any of the Q in ΣQᵢ that we added to the result list in the other branck of the `if` statement, because by definition they have no back edges to p. But that exhausts all the unvisited nodes that are reachable from p. So z cannot exist.
+Is it maximal? Well, if it wasn't, then there must be some z with a route from p to z and a route from z to p such that z is not in our final value of P. Hence it can't be p itself, and it can't be in any of the Q in ΣQᵢ that have back edges to p, because that's just what we united with {p} to get our final value of P. And it can't be in any of the Q in ΣQᵢ that we added to the result list in the other branch of the `if` statement, because by definition they have no back edges to p. But that exhausts all the unvisited nodes that are reachable from p. So z cannot exist.
 
 And the final value of P that we add to the list at the end is clearly in the right place in the list because it contains p, and so is closer to p than all the other SCCs we added.
 
