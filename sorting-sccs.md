@@ -17,7 +17,7 @@ sort (p node) -> list[set[node]]
 		let Qᵢ = sort(qᵢ) for each i in 0 … n
 	let P = {p}
 	for each Q in ΣQᵢ
-        	if there is no edge from Q to p :
+        	if there is no edge from Q to P :
 			append Q to the result list
 		else :
 			let P = P ∪ Q
