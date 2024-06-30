@@ -4,13 +4,14 @@ If we have an algorithm which performs such a sort on all the unvisited points r
 
 I claim that the following performs such a sort.
 
-For convenience of exposition, in what follows I do not pass the graph G as a parameter. This is because we want the annotation as to whether a node in the graph has been visited to be a piece of "global state", as it were — if it has been visited by one branch of a recursive call, it should be perceived as visited by another. That way our algorithm will have to visit each node only once. Similarly the "result list" is an implicit piece of global state, a list[set[node]] which we just append to when we find an SCC.
+For convenience of exposition, in what follows I do not pass the graph G as a parameter. This is because we want the annotation as to whether a node in the graph has been visited to be a piece of "global state", as it were — if it has been visited by one branch of a recursive call, it should be perceived as visited by another. That way our algorithm will have to visit each node only once.
 
 So. The algorithm:
 
 ```
 sort (p node) -> list[set[node]]
 	mark p as visited
+	make an empty result list
 	let  q₀ … qₙ be the nodes such that p -> qᵢ is in G.
 	for each unvisited qᵢ :
 		let Qᵢ = sort(qᵢ) for each i in 0 … n
@@ -21,6 +22,7 @@ sort (p node) -> list[set[node]]
 		else :
 			let P = P ∪ Q
 	append P to the result list
+	return the result list
 ```
 
 We will prove that it works by induction.
