@@ -4,7 +4,7 @@ If we have an algorithm which performs such a sort on all the unvisited points r
 
 I claim that the following performs such a sort.
 
-For convenience of exposition, in what follows I do not pass the graph G as a parameter. This is because we want the annotation as to whether a node in the graph has been visited to be a piece of "global state", as it were — if it has been visited by one branch of a recursive call, it should be perceived as visited by another. That way our algorithm will have to visit each node only once.
+For convenience of exposition, in what follows I do not pass the graph G as a parameter. This is because we want the annotation as to whether a node in the graph has been visited to be a piece of "global state", as it were — if it has been visited by one branch of a recursive call, it should be perceived as visited by another, and explicitly passing it around would obscure that point.
 
 So. The algorithm:
 
